@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import request
+from flask import request, jsonify
 import logging
 import telegram
 
@@ -18,10 +18,12 @@ bot_name = "SpellShellBot"
 
 @app.route('/', methods=['POST', 'GET'])
 def setWebhook():
+    app.config['save_last'] = request.form
     if request.method == 'GET':
         logging.info('Hello, Telegram!')
         print("Done")
-    return "OЛ, Telegram Bot!"
+        return jsonify(app.config['save_last'])
+    return jsonify(app.config['save_last'])
 
 
 @app.route('/verify', methods=['POST'])
