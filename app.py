@@ -21,7 +21,7 @@ def setWebhook():
     if request.method == 'GET':
         logging.info('Hello, Telegram!')
         print("Done")
-        return "Ok, Telegram Bot!"
+    return "OЛ, Telegram Bot!"
 
 
 @app.route('/verify', methods=['POST'])
