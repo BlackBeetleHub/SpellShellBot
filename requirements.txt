@@ -1,7 +1,6 @@
 Flask
 gunicorn
 beautifulsoup4==4.5.1
-bs4==0.0.1
 certifi==2016.9.26
 click==6.6
 freeze==1.0.10
