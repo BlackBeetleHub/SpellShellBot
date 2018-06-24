@@ -1,9 +1,7 @@
 from flask import Flask
-from flask import render_template, request
+from flask import request
 import logging
 import telegram
-import os
-import requests
 
 
 HOST = "https://enigmatic-dusk-86931.herokuapp.com/"
