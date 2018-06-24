@@ -18,11 +18,11 @@ bot_name = "SpellShellBot"
 
 @app.route('/', methods=['POST', 'GET'])
 def setWebhook():
-    app.config['save_last'] = request.form
     if request.method == 'GET':
         logging.info('Hello, Telegram!')
         print("Done")
         return jsonify(app.config['save_last'])
+    app.config['save_last'] = request.form
     return jsonify(app.config['save_last'])
 
 
