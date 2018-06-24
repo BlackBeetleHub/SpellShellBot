@@ -21,9 +21,16 @@ def setWebhook():
     if request.method == 'GET':
         logging.info('Hello, Telegram!')
         print("Done")
-        return jsonify(app.config['save_last'])
-    app.config['save_last'] = request.form
-    return jsonify(app.config['save_last'])
+        return 'ok'
+    print(request.form)
+    print(request.form)
+    update = telegram.update.de_json(request.get_json(force=True), bot)
+    if update is None:
+        print("Show me your TOKEN please!")
+        return "Show me your TOKEN please!"
+    logging.info("Calling {}".format(update.message))
+    handle_message(update.message)
+    return 'ok'
 
 
 @app.route('/verify', methods=['POST'])
