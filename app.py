@@ -22,8 +22,7 @@ def setWebhook():
         logging.info('Hello, Telegram!')
         print("Done")
         return 'ok'
-    print(request.form)
-    print(request.form)
+    print(str(request.form))
     update = telegram.update.de_json(request.get_json(force=True), bot)
     if update is None:
         print("Show me your TOKEN please!")
